@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ArticleComponent } from './article/article.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TagsComponent } from './tags/tags.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TagsComponent } from './tags/tags.component';
     HomeComponent,
     ArticleComponent,
     ProjectsComponent,
-    TagsComponent
+    TagsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
