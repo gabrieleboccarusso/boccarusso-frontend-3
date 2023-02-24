@@ -11,6 +11,7 @@ import { ArticleComponent } from './article/article.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TagsComponent } from './tags/tags.component';
 import { SearchComponent } from './search/search.component';
+import { HeaderComponent } from './base/header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,17 @@ import { SearchComponent } from './search/search.component';
     ArticleComponent,
     ProjectsComponent,
     TagsComponent,
-    SearchComponent
+    SearchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    HeaderComponent
+  ]
 })
 export class AppModule { }
