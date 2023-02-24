@@ -8,7 +8,7 @@ import { TagService } from '../data/services/tagService/tag.service';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent {
-tags?: Tag[];
+  tags?: Tag[];
 
   constructor(
     private tagService: TagService

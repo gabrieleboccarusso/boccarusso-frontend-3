@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Project } from '../data/interfaces/project';
+import { ProjectService } from '../data/services/projectService/project.service';
 
 @Component({
   selector: 'app-projects',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+  projects?: Project[];
 
+  constructor(
+    private projectService: ProjectService
+  ) {}
+
+  ngOnInit() {
+    this.projectService.getAllProjects().subscribe(x => this.projects = x);
+  }
 }
