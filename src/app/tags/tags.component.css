@@ -1,0 +1,9 @@
+.container-tag {
+	display: flex;
+ flex-direction: row;
+ flex-flow: wrap;
+}
+
+li {
+ margin: 10px;
+}
