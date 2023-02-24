@@ -36,7 +36,7 @@ import { SidebarComponent } from './base/sidebar/sidebar.component';
   bootstrap: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    // SidebarComponent
   ]
 })
 export class AppModule { }

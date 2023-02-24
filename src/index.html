@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+	<!-- The template for this website comes from HTML5UP thus why the presence of jquery code -->
   <head>
     <title>Gabriele Boccarusso</title>
     <meta charset="utf-8" />
@@ -14,7 +15,39 @@
 						<app-root></app-root>
 				</div>
 			</div>
-			<app-sidebar></app-sidebar>
+			<!--
+				<app-sidebar></app-sidebar>
+			-->
+			<!-- If the code is not here the external javascript doesn't work -->
+			<div id="sidebar">
+				<div class="inner">
+						<section id="search" class="alt">
+							<form method="get" action="search">
+								<input type="text" name="for" id="for" placeholder="Search" />
+								<br>
+								<input type="submit" />
+							</form>
+						</section>
+			
+						<nav id="menu">
+							<header class="major">
+								<h2>Menu</h2>
+							</header>
+							<ul>
+								<li><a href="/">Homepage</a></li>
+								<li><a href="/projects">Projects</a></li>
+								<li><a href="/tags">Tags</a></li>
+							</ul>
+						</nav>
+						
+						<footer id="footer">
+							<p class="copyright">
+								&copy; Gabriele Boccarusso. All rights reserved. Design: 
+								<a href="https://html5up.net">HTML5 UP</a>.
+							</p>
+						</footer>
+				</div>
+			</div>
 		</div>
 
   <!-- Scripts -->
