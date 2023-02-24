@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { Project } from '../../interfaces/project';
+import { ApiSorterService } from '../apiSorterService/api-sorter.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,11 @@ import { Project } from '../../interfaces/project';
 export class ProjectService {
 
   constructor(
-    // private sorter: ApiSorterService,
+    private api: ApiSorterService,
     private http: HttpClient
   ) { }
 
   public getAllProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>("http://localhost:8080/project");
+    return this.http.get<Project[]>(this.api.allProjectsURL());
   }
 }

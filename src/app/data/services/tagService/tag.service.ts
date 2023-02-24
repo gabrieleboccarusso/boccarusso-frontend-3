@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Tag } from '../../interfaces/tag';
+import { ApiSorterService } from '../apiSorterService/api-sorter.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,11 @@ import { Tag } from '../../interfaces/tag';
 export class TagService {
 
   constructor(
-    // private sorter: ApiSorterService,
+    private api: ApiSorterService,
     private http: HttpClient
   ) { }
 
   public getAllTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>("http://localhost:8080/tag");
+    return this.http.get<Tag[]>(this.api.allTagsURL());
   }
 }
