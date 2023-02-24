@@ -41,7 +41,7 @@ import { TagDetailComponent } from './tag-detail/tag-detail.component';
   bootstrap: [
     AppComponent,
     HeaderComponent,
-    // SidebarComponent
+    SidebarComponent
   ]
 })
 export class AppModule { }
