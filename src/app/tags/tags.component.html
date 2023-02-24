@@ -1,1 +1,5 @@
-<p>tags works!</p>
+<ul class="actions container-tag">
+ <li *ngFor="let tag of tags">
+  <a [routerLink]="['/tags/' + tag.slug]" class="button primary">{{tag.name}}</a>
+ </li>
+</ul>

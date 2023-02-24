@@ -14,6 +14,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TagDetailComponent } from './tag-detail/tag-detail.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     TagsComponent,
     SearchComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    TagDetailComponent
   ],
   imports: [
     BrowserModule,
