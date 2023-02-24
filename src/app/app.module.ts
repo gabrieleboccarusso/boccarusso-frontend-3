@@ -12,6 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { TagsComponent } from './tags/tags.component';
 import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './base/header/header.component';
+import { SidebarComponent } from './base/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HeaderComponent } from './base/header/header.component';
     ProjectsComponent,
     TagsComponent,
     SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { HeaderComponent } from './base/header/header.component';
   providers: [],
   bootstrap: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ]
 })
 export class AppModule { }
