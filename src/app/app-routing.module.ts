@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: 'projects', component: ProjectsComponent},
   {path: 'tags', component: TagsComponent},
   {path: 'tags/:slug', component: TagDetailComponent},
-  {path: 'search', component: SearchComponent},
+  {path: 'search',   redirectTo: 'search/'},
+  {path: 'search/:slug', component: SearchComponent},
   {path: ':slug', component: ArticleDetailComponent},
   // {path: '**', component: PageNotFoundComponent}
 ];
