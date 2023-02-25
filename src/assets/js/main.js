@@ -110,32 +110,12 @@ document.onload = (function($) {
 						if (breakpoints.active('>large'))
 							return;
 
-					// Vars.
-						var $a = $(this),
-							href = $a.attr('href'),
-							target = $a.attr('target');
-
 					// Prevent default.
 						event.preventDefault();
 						event.stopPropagation();
 
-					// Check URL.
-						if (!href || href == '#' || href == '')
-							return;
-
 					// Hide sidebar.
 						$sidebar.addClass('inactive');
-
-					// Redirect to href.
-						setTimeout(function() {
-
-							if (target == '_blank')
-								window.open(href);
-							else
-								window.location.href = href;
-
-						}, 500);
-
 				});
 
 			// Prevent certain events inside the panel from bubbling.
