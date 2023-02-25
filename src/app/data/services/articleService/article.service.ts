@@ -21,4 +21,8 @@ export class ArticleService {
   public getArticleBySlug(slug: string): Observable<Article>{
     return this.http.get<Article>(this.api.articleBySlug(slug));
   }
+
+  public getContent(url: string) {
+    return this.http.get(url, {responseType: 'text'});
+  }
 }
