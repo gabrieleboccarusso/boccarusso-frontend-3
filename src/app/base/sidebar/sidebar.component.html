@@ -1,9 +1,9 @@
 
    <section id="search" class="alt">
-    <form method="get" action="search">
-     <input type="text" name="for" id="for" placeholder="Search" />
+    <form [formGroup]="searchForm"  (ngSubmit)="onSubmit(searchForm)">
+     <input type="text" formControlName="searchValue" placeholder="Search" />
      <br>
-     <input type="submit" />
+     <button type="submit">Send</button>
     </form>
    </section>
 
