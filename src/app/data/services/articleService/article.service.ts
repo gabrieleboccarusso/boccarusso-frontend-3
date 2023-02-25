@@ -19,7 +19,11 @@ export class ArticleService {
   }
 
   public getArticleBySlug(slug: string): Observable<Article>{
-    return this.http.get<Article>(this.api.articleBySlug(slug));
+    return this.http.get<Article>(this.api.articleBySlugURL(slug));
+  }
+
+  public getArticlesByTag(tag: string) {
+    return this.http.get<Article[]>(this.api.articlesByTagURL(tag));
   }
 
   public getContent(url: string) {
