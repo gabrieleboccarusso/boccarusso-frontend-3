@@ -8,5 +8,5 @@ export interface Article {
  content: string;
  creationDate: string;
  lastUpdate: string;
- tags: Tag[];
+ tag: Tag[];
 }
