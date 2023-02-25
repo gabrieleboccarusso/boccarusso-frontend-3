@@ -26,6 +26,10 @@ export class ArticleService {
     return this.http.get<Article[]>(this.api.articlesByTagURL(tag));
   }
 
+  public getArticlesByTitle(title: string) {
+    return this.http.get<Article[]>(this.api.articleByTitleURL(title));
+  }
+
   public getContent(url: string) {
     return this.http.get(url, {responseType: 'text'});
   }
