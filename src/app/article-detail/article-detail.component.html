@@ -1,1 +1,15 @@
-<p>article-detail works!</p>
+<br>
+<header class="main">
+ <h1>{{article?.title}}</h1>
+</header>
+<p>text</p>
+<ul class="icons">
+ <li><a href="#" class="icon far fa-folder"><span class="label">Facebook</span></a></li>
+ <li *ngFor="let tag of article?.tag">
+  <a [routerLink]="['/tags/' + tag.slug]">{{tag.name}}</a>
+ </li>
+</ul>
+<span class="image main">
+ <img src="{{article?.image}}" alt="">
+</span>
+<p [innerHTML]="content"></p>
