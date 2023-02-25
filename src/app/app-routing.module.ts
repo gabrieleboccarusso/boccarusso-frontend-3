@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'tags', component: TagsComponent},
   {path: 'tags/:slug', component: TagDetailComponent},
   {path: 'search',   redirectTo: 'search/'},
-  {path: 'search/:slug', component: SearchComponent},
+  {path: 'search/:title', component: SearchComponent},
   {path: ':slug', component: ArticleDetailComponent},
   // {path: '**', component: PageNotFoundComponent}
 ];
