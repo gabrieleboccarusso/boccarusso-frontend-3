@@ -102,10 +102,15 @@ document.onload = (function($) {
 				});
 
 		// Events.
+				$sidebar.on('click', 'button', () => {
+						if (breakpoints.active('>large'))
+						return;
+
+						$sidebar.addClass('inactive');
+				});
 
 			// Link clicks.
 				$sidebar.on('click', 'a', function(event) {
-
 					// >large? Bail.
 						if (breakpoints.active('>large'))
 							return;
