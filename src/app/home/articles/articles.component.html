@@ -4,11 +4,11 @@
  </header>
  <div class="posts">
   <article *ngFor="let article of articles">
-   <a href="{{article.image}}" class="image"><img src="{{article.image}}" alt="" /></a>
+   <a routerLink="{{article.slug}}" class="image"><img src="{{article.image}}" alt="" /></a>
    <h3>{{article.title}}</h3>
    <p>{{article.intro}}</p>
    <ul class="actions">
-    <li><a href="{{article.slug}}" class="button">Read more</a></li>
+    <li><a routerLink="{{article.slug}}" class="button">Read more</a></li>
    </ul>
   </article>
  </div>
