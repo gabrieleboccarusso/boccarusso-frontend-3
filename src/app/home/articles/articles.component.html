@@ -1,26 +1,18 @@
 <section>
  <header class="major">
-  <h2>Ipsum sed dolor</h2>
+  <h2>Articles</h2>
  </header>
  <div class="posts">
-  <article>
-   <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-   <h3>Interdum aenean</h3>
-   <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+  <article *ngFor="let article of articles">
+   <a href="{{article.image}}" class="image"><img src="{{article.image}}" alt="" /></a>
+   <h3>{{article.title}}</h3>
+   <p>{{article.intro}}</p>
    <ul class="actions">
-    <li><a href="#" class="button">More</a></li>
-   </ul>
-  </article>
-  <article>
-   <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-   <h3>Nulla amet dolore</h3>
-   <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-   <ul class="actions">
-    <li><a href="#" class="button">More</a></li>
+    <li><a href="{{article.slug}}" class="button">Read more</a></li>
    </ul>
   </article>
  </div>
   <ul class="actions">
-    <li><a href="#" class="button">Load more</a></li>
+    <li><a href="#" class="button primary">Load more</a></li>
   </ul>
 </section>
