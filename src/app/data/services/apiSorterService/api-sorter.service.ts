@@ -23,15 +23,15 @@ export class ApiSorterService {
     return this.article_url;
   }
 
-  public articleBySlug(slug: string) {
+  public articleBySlugURL(slug: string) {
     return this.article_url + '/' + slug;
   }
 
-  public articleByTitle(title: string): string {
+  public articleByTitleURL(title: string): string {
     return this.article_url + "/title?value=" + title;
   }
 
-  public articleByTag(tag: string): string {
+  public articlesByTagURL(tag: string): string {
     return this.article_url + "/tag?value=" + tag;
   }
  }
