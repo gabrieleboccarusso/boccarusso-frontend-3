@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ArticleComponent } from './article/article.component';
 import { HeaderComponent } from './base/header/header.component';
 import { SidebarComponent } from './base/sidebar/sidebar.component';
 import { AboutMeComponent } from './home/about-me/about-me.component';
@@ -15,6 +14,7 @@ import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TagDetailComponent } from './tag-detail/tag-detail.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 
 @NgModule({
@@ -24,13 +24,13 @@ import { TagDetailComponent } from './tag-detail/tag-detail.component';
     ArticlesComponent,
     AboutMeComponent,
     HomeComponent,
-    ArticleComponent,
     ProjectsComponent,
     TagsComponent,
     SearchComponent,
     HeaderComponent,
     SidebarComponent,
-    TagDetailComponent
+    TagDetailComponent,
+    ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
