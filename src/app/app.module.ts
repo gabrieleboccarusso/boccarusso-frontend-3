@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +14,6 @@ import { SkillsComponent } from './home/skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
-import { HttpClientModule } from '@angular/common/http';
 import { TagDetailComponent } from './tag-detail/tag-detail.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
@@ -35,7 +36,8 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [
