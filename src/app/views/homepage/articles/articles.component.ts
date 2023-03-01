@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Article } from 'src/app/data/interfaces/article';
-import { ArticleService } from 'src/app/data/services/articleService/article.service';
+import { Article } from 'src/app/logic/interfaces/article';
+import { ArticleService } from 'src/app/logic/services/articleService/article.service';
 
 @Component({
   selector: 'app-articles',

@@ -1,21 +1,26 @@
+// @angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
+// @base
 import { HeaderComponent } from './base/header/header.component';
 import { SidebarComponent } from './base/sidebar/sidebar.component';
-import { AboutMeComponent } from './home/about-me/about-me.component';
-import { ArticlesComponent } from './home/articles/articles.component';
-import { HomeComponent } from './home/home.component';
-import { SkillsComponent } from './home/skills/skills.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { SearchComponent } from './search/search.component';
-import { TagsComponent } from './tags/tags.component';
-import { TagDetailComponent } from './tag-detail/tag-detail.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
+
+// @view
+import { AppComponent } from './app.component';
+
+import { AboutMeComponent } from './views/homepage/about-me/about-me.component';
+import { ArticlesComponent } from './views/homepage/articles/articles.component';
+import { HomeComponent } from './views/homepage/home.component';
+import { SkillsComponent } from './views/homepage/skills/skills.component';
+import { ProjectsComponent } from './views/projects/projects.component';
+import { SearchComponent } from './base/sidebar/search/search.component';
+import { TagsComponent } from './views/tags/tags.component';
+import { TagDetailComponent } from './views/tag-detail/tag-detail.component';
+import { ArticleDetailComponent } from './views/article-detail/article-detail.component';
 
 
 @NgModule({

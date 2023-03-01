@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { TagsComponent } from './tags/tags.component';
-import { SearchComponent } from './search/search.component';
-import { TagDetailComponent } from './tag-detail/tag-detail.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { HomeComponent } from './views/homepage/home.component';
+import { ProjectsComponent } from './views/projects/projects.component';
+import { TagsComponent } from './views/tags/tags.component';
+import { SearchComponent } from './base/sidebar/search/search.component';
+import { TagDetailComponent } from './views/tag-detail/tag-detail.component';
+import { ArticleDetailComponent } from './views/article-detail/article-detail.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

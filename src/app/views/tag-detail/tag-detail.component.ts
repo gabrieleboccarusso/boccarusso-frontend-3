@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Article } from '../data/interfaces/article';
-import { ArticleService } from '../data/services/articleService/article.service';
+import { Article } from '../../logic/interfaces/article';
+import { ArticleService } from '../../logic/services/articleService/article.service';
 
 @Component({
   selector: 'app-tag-detail',

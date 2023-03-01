@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Project } from '../data/interfaces/project';
-import { ProjectService } from '../data/services/projectService/project.service';
+import { Project } from '../../logic/interfaces/project';
+import { ProjectService } from '../../logic/services/projectService/project.service';
 
 @Component({
   selector: 'app-projects',

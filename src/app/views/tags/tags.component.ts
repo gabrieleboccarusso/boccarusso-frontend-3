@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Tag } from '../data/interfaces/tag';
-import { TagService } from '../data/services/tagService/tag.service';
+
+import { Tag } from 'src/app/logic/interfaces/tag';
+import { TagService } from 'src/app/logic/services/tagService/tag.service';
 
 @Component({
   selector: 'app-tags',
