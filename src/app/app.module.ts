@@ -11,7 +11,6 @@ import { SidebarComponent } from './base/sidebar/sidebar.component';
 
 // @view
 import { AppComponent } from './app.component';
-
 import { AboutMeComponent } from './views/homepage/about-me/about-me.component';
 import { ArticlesComponent } from './views/homepage/articles/articles.component';
 import { HomeComponent } from './views/homepage/home.component';
@@ -21,6 +20,7 @@ import { SearchComponent } from './base/sidebar/search/search.component';
 import { TagsComponent } from './views/tags/tags.component';
 import { TagDetailComponent } from './views/tag-detail/tag-detail.component';
 import { ArticleDetailComponent } from './views/article-detail/article-detail.component';
+import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -36,7 +36,8 @@ import { ArticleDetailComponent } from './views/article-detail/article-detail.co
     HeaderComponent,
     SidebarComponent,
     TagDetailComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
