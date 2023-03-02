@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   searchForm: FormGroup = new FormGroup({
-    searchValue: new FormControl(''),
+    searchValue: new FormControl(),
   });
 
   constructor(
