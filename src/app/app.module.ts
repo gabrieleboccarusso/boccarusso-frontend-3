@@ -16,7 +16,7 @@ import { ArticlesComponent } from './views/homepage/articles/articles.component'
 import { HomeComponent } from './views/homepage/home.component';
 import { SkillsComponent } from './views/homepage/skills/skills.component';
 import { ProjectsComponent } from './views/projects/projects.component';
-import { SearchComponent } from './base/sidebar/search/search.component';
+import { SearchComponent } from './views/search/search.component';
 import { TagsComponent } from './views/tags/tags.component';
 import { TagDetailComponent } from './views/tag-detail/tag-detail.component';
 import { ArticleDetailComponent } from './views/article-detail/article-detail.component';
