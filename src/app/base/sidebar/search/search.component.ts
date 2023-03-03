@@ -15,10 +15,18 @@ export class SearchComponent {
   constructor (
     private route: ActivatedRoute,
     private articleService: ArticleService
-  ) {}
+  ) {
+    // the initial code was in a `ngOnInit` but would not work if
+    // the menu would get pressed when the url is already the one
+    // by subscribing into the constructor works although might
+    // not be a good practice
+    route.params.subscribe(val => {
+      this.lookup(val['title']);
+    });
+  }
 
-  ngOnInit() {
-    this.searchValue = this.route.snapshot.paramMap.get("title") || "";
+  lookup(title: string) {
+    this.searchValue = title;
     this.articleService.getArticlesByTitle(this.searchValue).subscribe(x => this.articles = x);
   }
 }
