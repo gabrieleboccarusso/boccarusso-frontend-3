@@ -18,6 +18,6 @@ export class SidebarComponent {
   ) {}
 
   onSubmit(form: FormGroup) {
-    this.router.navigateByUrl('/search/' + form.value.searchValue);
+    this.router.navigate(['/search', form.value.searchValue]);
    }
 }
