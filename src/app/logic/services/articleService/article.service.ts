@@ -14,6 +14,10 @@ export class ArticleService {
     private http: HttpClient
   ) { }
 
+  public getArticlesTotalNum(): Observable<number> {
+    return this.http.get<number>(this.api.totalArticlesNumURL());
+  }
+
   public getAllArticles(): Observable<Article[]> {
     return this.http.get<Article[]>(this.api.allArticlesURL());
   }

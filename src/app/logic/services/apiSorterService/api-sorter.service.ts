@@ -23,6 +23,10 @@ export class ApiSorterService {
     return this.article_url;
   }
 
+  public totalArticlesNumURL() {
+    return this.article_url + "/total";
+  }
+
   public pagingArticlesURL(page: number, size: number): string {
     return this.article_url + `?page=${page}&size=${size}`;
   }
