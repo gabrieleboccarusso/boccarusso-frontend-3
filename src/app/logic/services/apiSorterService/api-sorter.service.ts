@@ -23,6 +23,10 @@ export class ApiSorterService {
     return this.article_url;
   }
 
+  public pagingArticlesURL(page: number, size: number): string {
+    return this.article_url + `?page=${page}&size=${size}`;
+  }
+
   public articleBySlugURL(slug: string) {
     return this.article_url + '/' + slug;
   }
