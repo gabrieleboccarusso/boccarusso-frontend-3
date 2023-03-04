@@ -8,13 +8,21 @@ import { ArticleService } from 'src/app/logic/services/articleService/article.se
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent {
-  articles?: Article[];
+  articles: Article[] = [];
 
   constructor (
     private articleService: ArticleService
   ) {}
 
   ngOnInit() {
-    this.articleService.getAllArticles().subscribe(x => this.articles = x);
+    this.articleService.getAllArticles().subscribe(x => {
+      x.forEach(article => this.articles.push(article))
+    });
+  }
+
+  loadMore() {
+    this.articleService.getAllArticles().subscribe(x => {
+      x.forEach(article => this.articles.push(article))
+    });
   }
 }
