@@ -12,7 +12,7 @@
    </ul>
   </article>
  </div>
- <ul class="actions load-more" (click)="loadMore()">
-  <li><a class="button primary">Load more</a></li>
+ <ul class="actions load-more">
+  <li><a class="button primary" [ngClass]="{'disabled': noMoreArticles === true}" (click)="loadMore()">Load more</a></li>
  </ul>
 </section>

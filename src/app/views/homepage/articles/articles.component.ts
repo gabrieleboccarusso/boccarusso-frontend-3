@@ -11,6 +11,7 @@ export class ArticlesComponent {
   articles: Article[] = [];
   currentPage: number = 0;
   pageSize:number = 2;
+  noMoreArticles: boolean = false;
 
   constructor (
     private articleService: ArticleService
@@ -28,5 +29,6 @@ export class ArticlesComponent {
       x.forEach(article => this.articles.push(article))
     });
     this.currentPage++;
+    this.noMoreArticles = true;
   }
 }
