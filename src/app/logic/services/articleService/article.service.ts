@@ -18,6 +18,10 @@ export class ArticleService {
     return this.http.get<Article[]>(this.api.allArticlesURL());
   }
 
+  public getPagingArticles(page: number, size:number) {
+    return this.http.get<Article[]>(this.api.pagingArticlesURL(page, size));
+  }
+
   public getArticleBySlug(slug: string): Observable<Article>{
     return this.http.get<Article>(this.api.articleBySlugURL(slug));
   }
