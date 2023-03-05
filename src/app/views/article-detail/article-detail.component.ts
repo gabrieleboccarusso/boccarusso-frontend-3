@@ -20,11 +20,18 @@ export class ArticleDetailComponent {
   ngOnInit() {
     let slug: string = this.route.snapshot.paramMap.get("slug") || "";
     let content_url: string;
-    this.articleService.getArticleBySlug(slug).subscribe(x => {
-      this.article = x;
-      console.log(x);
-      content_url = this.article?.content || "";
-      this.articleService.getContent(content_url).subscribe(x => this.content = x);
-})};
-
+    this.articleService.getArticleBySlug(slug).subscribe({
+      next: x => {
+        this.article = x;
+        console.log(x);
+        content_url = this.article.content;
+        this.articleService.getContent(content_url).subscribe(x => this.content = x);
+      },
+      error: err => {
+        if (err.status == 404) {
+          // this.article = undefined;
+        }
+      }
+    })
   }
+  };
