@@ -1,19 +1,20 @@
-<br>
-<p *ngIf="loading === true">
+<div *ngIf="loading === true">
  loading...
-</p>
-<header class="main">
- <h1>{{article?.title}}</h1>
- <p>Created: {{article?.creationDate}} <br> Last Update: {{article?.lastUpdate}}</p>
- <ul class="icons">
+</div>
+
+<article *ngIf="article !== undefined">
+ <header class="main">
+  <h1>{{article.title}}</h1>
+  <p>Created: {{article.creationDate}} <br> Last Update: {{article.lastUpdate}}</p>
+  <ul class="icons">
   <li><i class="far fa-folder fa-2x" aria-hidden="true"></i></li>
-  <li *ngFor="let tag of article?.tag">
+  <li *ngFor="let tag of article.tag">
    <p><a [routerLink]="['/tags/' + tag.slug]">{{tag.name}}</a></p>
   </li>
  </ul>
 </header>
-
 <span class="image main">
- <img src="{{article?.image}}" alt="">
+ <img src="{{article.image}}" alt="">
 </span>
 <main [innerHTML]="content"></main>
+</article>
