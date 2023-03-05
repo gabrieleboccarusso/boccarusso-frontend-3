@@ -15,8 +15,9 @@ const routes: Routes = [
   {path: 'tags', component: TagsComponent},
   {path: 'tags/:slug', component: TagDetailComponent},
   {path: 'search/:title', component: SearchComponent},
+  {path: '404', component: PageNotFoundComponent},
   {path: ':slug', component: ArticleDetailComponent},
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', redirectTo: '/404', pathMatch: 'full'}
 ];
 
 @NgModule({
