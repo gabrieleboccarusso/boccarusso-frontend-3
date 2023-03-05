@@ -6,7 +6,7 @@
   <article *ngFor="let article of articles">
    <a routerLink="{{article.slug}}" class="image"><img src="{{article.image}}" alt="" /></a>
    <h3>{{article.title}}</h3>
-   <p>{{article.intro}}</p>
+   <p>{{article.tagline}}</p>
    <ul class="actions">
     <li><a routerLink="{{article.slug}}" class="button">Read more</a></li>
    </ul>

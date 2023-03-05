@@ -1,7 +1,7 @@
 export interface Project {
  slug: string;
  title: string;
- intro: string;
+ tagline: string;
  image: string;
  repo: string;
 }
