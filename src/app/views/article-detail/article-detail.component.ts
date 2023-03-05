@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from '../../logic/interfaces/article';
 import { ArticleService } from '../../logic/services/articleService/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-detail',
@@ -9,10 +10,12 @@ import { ArticleService } from '../../logic/services/articleService/article.serv
   styleUrls: ['./article-detail.component.css']
 })
 export class ArticleDetailComponent {
+  loading: boolean = true;
   article?: Article;
   content?: string;
 
   constructor (
+    private router: Router,
     private route: ActivatedRoute,
     private articleService: ArticleService
   ) {}
@@ -22,14 +25,15 @@ export class ArticleDetailComponent {
     let content_url: string;
     this.articleService.getArticleBySlug(slug).subscribe({
       next: x => {
+        this.loading = false;
         this.article = x;
-        console.log(x);
         content_url = this.article.content;
         this.articleService.getContent(content_url).subscribe(x => this.content = x);
       },
       error: err => {
+        console.log("error: " + err.status);
         if (err.status == 404) {
-          // this.article = undefined;
+          this.router.navigate(['/404']);
         }
       }
     })
