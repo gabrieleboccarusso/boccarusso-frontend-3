@@ -19,7 +19,11 @@ export class TagDetailComponent {
 
   ngOnInit() {
     this.tag = this.route.snapshot.paramMap.get("slug") || "";
-    console.log(this.tag);
     this.articleService.getArticlesByTag(this.tag).subscribe(x => this.articles = x);
+    this.tag = this.unsanitize(this.tag);
+  }
+
+  unsanitize(slug: string): string {
+    return slug.replace('-', ' ');
   }
 }
