@@ -1,22 +1,36 @@
-<section id="banner">
- <div class="content">
-  <header>
-   <h1>Projects</h1>
-  </header>
- </div>
-</section>
+<div class="loader" *ngIf="loading === true">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  <div class="bar4"></div>
+  <div class="bar5"></div>
+  <div class="bar6"></div>
+  <div class="bar7"></div>
+  <div class="bar8"></div>
+  <div class="bar9"></div>
+</div>
 
-<section>
- <div class="posts">
-  <article *ngFor="let project of projects">
-    <a [href]="[project.repo]" class="image"><img [src]="[project.image]" alt="work in progress" />
-    </a>
-    <h3>{{project.title}}</h3>
-    <p>{{project.tagline}}</p>
-    <ul class="actions">
-      <li><a href="#" class="button">Go to the repo</a></li>
-      <li><a href="#" class="button">see it live</a></li>
-    </ul>
-  </article>
- </div>
-</section>
+<div *ngIf="projects !== undefined">
+  <section id="banner">
+  <div class="content">
+    <header>
+    <h1>Projects</h1>
+    </header>
+  </div>
+  </section>
+
+  <section>
+  <div class="posts">
+    <article *ngFor="let project of projects">
+      <a [href]="[project.repo]" class="image"><img [src]="[project.image]" alt="work in progress" />
+      </a>
+      <h3>{{project.title}}</h3>
+      <p>{{project.tagline}}</p>
+      <ul class="actions">
+        <li><a href="#" class="button">Go to the repo</a></li>
+        <li><a href="#" class="button">see it live</a></li>
+      </ul>
+    </article>
+  </div>
+  </section>
+</div>
