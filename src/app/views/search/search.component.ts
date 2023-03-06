@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UtilitiesService } from 'src/app/logic/services/utilitiesService/utilities.service';
 import { Article } from '../../logic/interfaces/article';
 import { ArticleService } from '../../logic/services/articleService/article.service';
 
@@ -9,12 +10,14 @@ import { ArticleService } from '../../logic/services/articleService/article.serv
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  loading: boolean = true;
   searchValue?: string;
   articles?: Article[];
 
   constructor (
     private route: ActivatedRoute,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private utilities: UtilitiesService    
   ) {
     // the initial code was in a `ngOnInit` but would not work if
     // the menu would get pressed when the url is already the one
@@ -27,6 +30,12 @@ export class SearchComponent {
 
   lookup(title: string) {
     this.searchValue = title;
-    this.articleService.getArticlesByTitle(this.searchValue).subscribe(x => this.articles = x);
+    this.articleService.getArticlesByTitle(this.searchValue).subscribe({
+      next: x => {
+        this.loading = false;
+        this.articles = x;
+      },
+      error: err => this.utilities.onError(err)
+    });
   }
 }
