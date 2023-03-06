@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Article } from '../../logic/interfaces/article';
 import { ArticleService } from '../../logic/services/articleService/article.service';
 import { Router } from '@angular/router';
+import { UtilitiesService } from 'src/app/logic/services/utilitiesService/utilities.service';
 
 @Component({
   selector: 'app-article-detail',
@@ -17,7 +18,8 @@ export class ArticleDetailComponent {
   constructor (
     private router: Router,
     private route: ActivatedRoute,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private utilities: UtilitiesService
   ) {}
 
   ngOnInit() {
@@ -30,12 +32,7 @@ export class ArticleDetailComponent {
         content_url = this.article.content;
         this.articleService.getContent(content_url).subscribe(x => this.content = x);
       },
-      error: err => {
-        console.log("error: " + err.status);
-        if (err.status == 404) {
-          this.router.navigate(['/404']);
-        }
-      }
+      error: err => this.utilities.onError(err)
     })
   }
   };
