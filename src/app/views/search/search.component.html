@@ -1,20 +1,35 @@
-<section id="banner">
- <div class="content">
-  <header>
-   <h1>Articles search: {{searchValue}}</h1>
-  </header>
- </div>
-</section>
+<div class="loader" *ngIf="loading === true">
+ <div class="bar1"></div>
+ <div class="bar2"></div>
+ <div class="bar3"></div>
+ <div class="bar4"></div>
+ <div class="bar5"></div>
+ <div class="bar6"></div>
+ <div class="bar7"></div>
+ <div class="bar8"></div>
+ <div class="bar9"></div>
+</div>
 
-<section>
- <div class="posts">
-  <article *ngFor="let article of articles">
-   <a routerLink="/{{article.slug}}" class="image"><img src="{{article.image}}" alt="" /></a>
-   <h3>{{article.title}}</h3>
-   <p>{{article.tagline}}</p>
-   <ul class="actions">
-    <li><a routerLink="/{{article.slug}}" class="button">Read more</a></li>
-   </ul>
-  </article>
- </div>
-</section>
+<div *ngIf="articles !== undefined">
+ <section id="banner">
+  <div class="content">
+   <header>
+    <h1>Your search for <i>{{searchValue}}</i></h1>
+    <h2 *ngIf="articles.length === 0">has produced no results</h2>
+   </header>
+  </div>
+ </section>
+
+ <section>
+  <div class="posts">
+   <article *ngFor="let article of articles">
+    <a routerLink="/{{article.slug}}" class="image"><img src="{{article.image}}" alt="" /></a>
+    <h3>{{article.title}}</h3>
+    <p>{{article.tagline}}</p>
+    <ul class="actions">
+     <li><a routerLink="/{{article.slug}}" class="button">Read more</a></li>
+    </ul>
+   </article>
+  </div>
+ </section>
+</div>
