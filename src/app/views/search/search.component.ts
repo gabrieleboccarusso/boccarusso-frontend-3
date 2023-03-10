@@ -31,11 +31,19 @@ export class SearchComponent {
   lookup(title: string) {
     this.searchValue = title;
     this.articleService.getArticlesByTitle(this.searchValue).subscribe({
-      next: x => {
-        this.loading = false;
-        this.articles = x;
-      },
+      next: x => this.onSearch(x),
       error: err => this.utilities.onError(err)
     });
+  }
+
+  onSearch(articles: Article[]) {
+    this.loading = false;
+    this.articles = articles;
+
+    this.utilities.setHeadData(
+      "Search",
+      `Looking for everything ${this.searchValue} done by Gabriele Boccarusso`,
+      ["Search", "Article", "Java", "Javascript", "Angular"]
+    );
   }
 }
