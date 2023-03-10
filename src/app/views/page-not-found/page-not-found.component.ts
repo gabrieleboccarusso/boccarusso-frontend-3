@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilitiesService } from 'src/app/logic/services/utilitiesService/utilities.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-not-found.component.css']
 })
 export class PageNotFoundComponent {
+  title: string = "Page not found";
+  description: string = "Whatever you were looking for is not here";
 
+  constructor(
+    private utilities: UtilitiesService
+  ) {}
+
+  ngOnInit() {
+    this.utilities.setHeadData(
+      this.title,
+      this.description,
+      ['404', 'Error']
+      // TODO: add 404 image
+    );
+  }
 }
