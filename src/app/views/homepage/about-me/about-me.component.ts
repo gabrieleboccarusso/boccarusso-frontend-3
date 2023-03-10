@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-me.component.css']
 })
 export class AboutMeComponent {
-
+  @Input() pfp_src?: string;
+  @Input() pfp_alt?: string;
 }
