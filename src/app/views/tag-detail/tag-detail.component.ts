@@ -23,10 +23,7 @@ export class TagDetailComponent {
   ngOnInit() {
     this.tag = this.route.snapshot.paramMap.get("slug") || "";
     this.articleService.getArticlesByTag(this.tag).subscribe({
-      next: x => {
-        this.loading = false;
-        this.articles = x;
-      },
+      next: x => this.onTag(x),
       error: err => this.utilities.onError(err)
     });
     this.tag = this.unsanitize(this.tag);
@@ -34,5 +31,16 @@ export class TagDetailComponent {
 
   unsanitize(slug: string): string {
     return slug.replace('-', ' ');
+  }
+
+  onTag(articles: Article[]) {
+    this.loading = false;
+    this.articles = articles;
+
+    this.utilities.setHeadData(
+      `All articles with tag ${this.tag}`,
+      `Looking for articles with tag ${this.tag}`,
+      ['Search', 'Tag', 'Java', 'JavaScript', 'Angular']
+    );
   }
 }
