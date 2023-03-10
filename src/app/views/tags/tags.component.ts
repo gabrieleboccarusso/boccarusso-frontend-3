@@ -20,11 +20,19 @@ export class TagsComponent {
 
   ngOnInit() {
     this.tagService.getAllTags().subscribe({
-      next: x => {
-        this.loading = false;
-        this.tags = x;
-      },
+      next: x => this.onTags(x),
       error: err => this.utilities.onError(err)
     });
+  }
+
+  onTags(tags: Tag[]) {
+    this.loading = false;
+    this.tags = tags;
+
+    this.utilities.setHeadData(
+      'All tags',
+      'All tags here ready for a lookup',
+      ['Tags', 'Search', 'OOP', 'Java', 'Databases', 'JavaScript']
+    );
   }
 }
