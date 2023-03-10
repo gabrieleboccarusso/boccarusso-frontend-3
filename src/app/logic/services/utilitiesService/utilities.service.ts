@@ -7,6 +7,10 @@ import { Meta } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class UtilitiesService {
+  // an even bigger optimization would be 
+  // to get those two values from an api
+  image_src: string = "https://i.ibb.co/HhmVRB2/5.jpg";
+  image_alt: string = "profile picture of author Gabriele Boccarusso";
 
   constructor(
     private router: Router,
@@ -28,12 +32,12 @@ export class UtilitiesService {
   public setHeadData(
     title: string,
     description: string,
-    url: string,
-    image: string,
-    type: string,
-    tags: string[]
+    tags: string[],
+    image_src: string = this.getProfilePictureSource(),
+    image_alt: string = this.getProfilePictureAlt()
   ) {
-
+    console.log(window.location.href);
+    let url: string = window.location.href;
     this.title.setTitle(`${title} | Gabriele Boccarusso`);
     this.metaTags.addTags([
       { name: 'author', content: 'Gabriele Boccarusso' },
@@ -41,12 +45,12 @@ export class UtilitiesService {
       { name: 'keywords', content: this.makeKeywordsString(tags) },
       { name: 'og:url', content: url },
       { name: 'canonical', content: url },
-      { name: 'og:type', content: type },
+      { name: 'og:type', content: 'website' },
       { name: 'og:title', content: title },
-      { name: 'og:image', content: image },
+      { name: 'og:image', content: image_src },
+      { name: 'og:image:alt', content: image_alt },
       { name: 'og:image:type', content: 'image/jpeg' },
-      { name: 'og:locale', content: 'en_US'},
-      { name: 'og:image:alt', content: 'picture of author and creator of content Gabriele Boccarusso'}
+      { name: 'og:locale', content: 'en_US'}
     ]);
   }
 
@@ -55,6 +59,14 @@ export class UtilitiesService {
     if (err.status == 404) {
       this.router['navigate'](['/404']);
     }
+  }
+
+  public getProfilePictureSource(): string {
+    return this.image_src;
+  }
+
+  public getProfilePictureAlt(): string {
+    return this.image_alt;
   }
 
 
