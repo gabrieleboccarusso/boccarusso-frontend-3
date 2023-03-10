@@ -19,11 +19,19 @@ export class ProjectsComponent {
 
   ngOnInit() {
     this.projectService.getAllProjects().subscribe({
-      next: x => {
-        this.loading = false;
-        this.projects = x;
-      },
+      next: x => this.onProjects(x),
       error: err => this.utilities.onError(err)
     });
+  }
+
+  onProjects(projects: Project[]) {
+    this.loading = false;
+    this.projects = projects;
+
+    this.utilities.setHeadData(
+      "Projects",
+      "All projects done by Gabriele Boccarusso",
+      ["Projects", "Github", "Java", "Javascript", "Python"]
+    );
   }
 }
