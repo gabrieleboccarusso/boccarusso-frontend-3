@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "boccarusso-ac56c": {
+      "hosting": {
+        "boccarusso": [
+          "boccarusso-ac56c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "boccarusso-ac56c"
+  }
+}

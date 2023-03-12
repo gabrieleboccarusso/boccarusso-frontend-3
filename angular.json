@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "boccarusso:build:production",
+            "firebaseProject": "boccarusso-ac56c",
+            "firebaseHostingSite": "boccarusso-ac56c"
+          }
         }
       }
     }
