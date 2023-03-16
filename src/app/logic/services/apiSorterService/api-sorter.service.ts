@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiSorterService {
-  domain: string = "http://localhost:8080";
+  domain: string = "https://boccarusso.onrender.com";
   tag_url: string = this.domain + "/tag";
   project_url: string = this.domain + "/project";
   article_url: string = this.domain + "/article";
