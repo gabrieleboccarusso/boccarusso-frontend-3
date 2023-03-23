@@ -21,6 +21,7 @@ import { TagsComponent } from './views/tags/tags.component';
 import { TagDetailComponent } from './views/tag-detail/tag-detail.component';
 import { ArticleDetailComponent } from './views/article-detail/article-detail.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { LoadingComponent } from './base/loading/loading/loading.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
     SidebarComponent,
     TagDetailComponent,
     ArticleDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
