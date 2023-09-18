@@ -1,6 +1,10 @@
 # Boccarusso
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+This project is a simple frontend used for boccarusso.com that uses an old premade jquery template for the styling that was heavily modified to suit angular along CSR for the rendering.
+
+A new frontend that doesn't use Jquery and that takes advantages of more features of Angular is currently in progress.
+
+It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
 
 ## Development server
 
